@@ -45,10 +45,6 @@ dependencies {
         include "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${cca_version}"
 
         modCompileOnly "maven.modrinth:z6sMEexp:GFUW7N2P" //tieredz
-        modCompileOnly "maven.modrinth:yUBXc3AH:BEPAjfEE" //libz
-        modCompileOnly "com.github.apace100:autotag-api:${autotag_version}"
-        modCompileOnly "com.github.apace100:autotag:${autotag_version}"
-        include "com.github.apace100:autotag-api:${autotag_version}"
 }
 
 
