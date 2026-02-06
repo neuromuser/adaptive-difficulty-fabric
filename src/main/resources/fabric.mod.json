@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "adaptive-difficulty",
+  "version": "${version}",
+  "name": "Adaptive Difficulty",
+  "description": "A Fabric mod",
+  "authors": [
+    "Neuromuser"
+  ],
+  "contact": {
+    "sources": "https://github.com/neuromuser/adaptive-difficulty"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/adaptive-difficulty/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.neuromuser.adaptivedifficulty.AdaptiveDifficulty"
+    ],
+    "cardinal-components": [
+      "com.neuromuser.adaptivedifficulty.network.AdaptiveComponents"
+    ]
+  },
+  "mixins": [
+    "adaptive-difficulty.mixins.json",
+    {
+      "config": "adaptive-difficulty.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "custom": {
+    "cardinal-components": [
+      "adaptivedifficulty:player_difficulty"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "1.20.1",
+    "java": ">=17",
+    "fabric-api": "*",
+    "cardinal-components-base": "*",
+    "cardinal-components-entity": "*"
+  }
+}

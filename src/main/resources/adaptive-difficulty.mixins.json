@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.neuromuser.adaptivedifficulty.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ActiveTargetGoalMixin",
+    "DamageMixin",
+    "PlayerManagerMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
