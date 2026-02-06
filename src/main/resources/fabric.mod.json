@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "id": "adaptive-difficulty",
   "version": "${version}",
-  "name": "Adaptive Difficulty",
-  "description": "A Fabric mod",
+  "name": "Fabricated Difficulty",
+  "description": "Fabric port of adaptive difficulty mod made by Spiderman31807 + my enhancements.",
   "authors": [
     "Neuromuser"
   ],
   "contact": {
-    "sources": "https://github.com/neuromuser/adaptive-difficulty"
+    "sources": "https://github.com/neuromuser/adaptive-difficulty-fabric"
   },
   "license": "GPL-3.0",
   "icon": "assets/adaptive-difficulty/icon.png",
