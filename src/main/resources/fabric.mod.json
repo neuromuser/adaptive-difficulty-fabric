@@ -21,13 +21,7 @@
       "com.neuromuser.adaptivedifficulty.network.AdaptiveComponents"
     ]
   },
-  "mixins": [
-    "adaptive-difficulty.mixins.json",
-    {
-      "config": "adaptive-difficulty.client.mixins.json",
-      "environment": "client"
-    }
-  ],
+  "mixins": ["adaptive-difficulty.mixins.json"],
   "custom": {
     "cardinal-components": [
       "adaptivedifficulty:player_difficulty"

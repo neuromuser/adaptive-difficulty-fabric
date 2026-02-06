@@ -15,17 +15,11 @@ public class AdaptiveDifficulty implements ModInitializer {
 
         @Override
         public void onInitialize() {
-                CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-                        AdaptiveCommand.register(dispatcher);
-                });
+                CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> AdaptiveCommand.register(dispatcher));
 
-                ServerTickEvents.START_SERVER_TICK.register(server -> {
-                        server.getPlayerManager().getPlayerList().forEach(PlayerTickHandler::onPlayerTick);
-                });
+                ServerTickEvents.START_SERVER_TICK.register(server -> server.getPlayerManager().getPlayerList().forEach(PlayerTickHandler::onPlayerTick));
 
-                ServerLivingEntityEvents.AFTER_DEATH.register((entity, damageSource) -> {
-                        ExperienceHandler.onEntityDropExperience(entity, entity.getXpToDrop());
-                });
+                ServerLivingEntityEvents.AFTER_DEATH.register((entity, damageSource) -> ExperienceHandler.onEntityDropExperience(entity, entity.getXpToDrop()));
 
                 LOGGER.info("Adaptive Difficulty initialized with {} difficulty levels", Difficulty.values().length);
         }

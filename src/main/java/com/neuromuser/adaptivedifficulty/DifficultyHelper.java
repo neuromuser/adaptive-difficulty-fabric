@@ -20,17 +20,9 @@ public class DifficultyHelper {
         AdaptiveComponents.PLAYER_DIFFICULTY.sync(player);
     }
 
-    public static void setDifficulty(PlayerEntity player, String id) {
-        getData(player).setDifficulty(id);
-        AdaptiveComponents.PLAYER_DIFFICULTY.sync(player);
-    }
-
     public static void initialize(PlayerEntity player) {
-        PlayerDifficultyData data = getData(player);
         World world = player.getWorld();
         net.minecraft.world.Difficulty worldDifficulty = world.getDifficulty();
-
-        // Initialize to world difficulty if not set
         setDifficulty(player, Difficulty.fromMinecraftDifficulty(worldDifficulty));
     }
 }

@@ -21,7 +21,7 @@ public abstract class ActiveTargetGoalMixin extends TrackTargetGoal {
     private void onCanStart(CallbackInfoReturnable<Boolean> cir) {
         LivingEntity target = this.mob.getTarget();
 
-        if (target != null && !TargetingHandler.canTarget(this.mob, target)) {
+        if (target != null && !TargetingHandler.canTarget(target)) {
             cir.setReturnValue(false);
         }
     }

@@ -5,7 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 
 public class TargetingHandler {
 
-    public static boolean canTarget(LivingEntity entity, LivingEntity target) {
+    public static boolean canTarget(LivingEntity target) {
         if (!(target instanceof PlayerEntity player)) {
             return true;
         }

@@ -1,15 +1,14 @@
 package com.neuromuser.adaptivedifficulty;
 
 public enum Difficulty {
-    PEACEFUL("peaceful", "Peaceful", 0, 0.0f, Float.MAX_VALUE, 1.0f, true, false, 0.5f, 1),
-    EASY("easy", "Easy", 1, 0.5f, 10.0f, 1.0f, false, true, 0.75f, 0),
-    NORMAL("normal", "Normal", 2, 1.0f, 1.0f, 1.0f, false, true, 1.0f, 0),
-    HARD("hard", "Hard", 3, 1.5f, 0.0f, 1.25f, false, true, 1.25f, 0),
-    NIGHTMARE("nightmare", "Nightmare", 4, 2.5f, 0.0f, 2.0f, false, true, 2.0f, 0);
+    PEACEFUL("peaceful", "Peaceful", 0.0f, Float.MAX_VALUE, 1.0f, true, false, 0.5f),
+    EASY("easy", "Easy", 0.5f, 10.0f, 1.0f, false, true, 0.75f),
+    NORMAL("normal", "Normal", 1.0f, 1.0f, 1.0f, false, true, 1.0f),
+    HARD("hard", "Hard", 1.5f, 0.0f, 1.25f, false, true, 1.25f),
+    NIGHTMARE("nightmare", "Nightmare",  2.5f, 0.0f, 2.0f, false, true, 2.0f);
 
     private final String id;
     private final String displayName;
-    private final int numericId;
     private final float damageMultiplier;
     private final float starvationDamageThreshold;
     private final float exhaustionModifier;
@@ -17,12 +16,11 @@ public enum Difficulty {
     private final boolean allowsHostileMobTargeting;
     private final float expMultiplier;
 
-    Difficulty(String id, String displayName, int numericId, float damageMultiplier,
+    Difficulty(String id, String displayName, float damageMultiplier,
                float starvationDamageThreshold, float exhaustionModifier, boolean preventStarvationDamage,
-               boolean allowsHostileMobTargeting, float expMultiplier, int foodRegenerationRate) {
+               boolean allowsHostileMobTargeting, float expMultiplier) {
         this.id = id;
         this.displayName = displayName;
-        this.numericId = numericId;
         this.damageMultiplier = damageMultiplier;
         this.starvationDamageThreshold = starvationDamageThreshold;
         this.exhaustionModifier = exhaustionModifier;
@@ -37,10 +35,6 @@ public enum Difficulty {
 
     public String getDisplayName() {
         return displayName;
-    }
-
-    public int getNumericId() {
-        return numericId;
     }
 
     public float getDamageMultiplier() {
@@ -68,27 +62,9 @@ public enum Difficulty {
     }
 
 
-    public net.minecraft.world.Difficulty getMinecraftDifficulty() {
-        return switch (numericId) {
-            case 0 -> net.minecraft.world.Difficulty.PEACEFUL;
-            case 1 -> net.minecraft.world.Difficulty.EASY;
-            case 2 -> net.minecraft.world.Difficulty.NORMAL;
-            default -> net.minecraft.world.Difficulty.HARD;
-        };
-    }
-
     public static Difficulty fromId(String id) {
         for (Difficulty diff : values()) {
             if (diff.id.equals(id)) {
-                return diff;
-            }
-        }
-        return NORMAL;
-    }
-
-    public static Difficulty fromNumericId(int id) {
-        for (Difficulty diff : values()) {
-            if (diff.numericId == id) {
                 return diff;
             }
         }
