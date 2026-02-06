@@ -12,7 +12,6 @@ public class PlayerTickHandler {
         HungerManager hungerManager = player.getHungerManager();
         int foodLevel = hungerManager.getFoodLevel();
 
-        // Peaceful mode food regeneration
         if (difficulty == Difficulty.PEACEFUL) {
             hungerManager.setSaturationLevel(1.0f);
             if (Objects.requireNonNull(player.getServer()).getTicks() % 20 == 0) {
@@ -20,7 +19,6 @@ public class PlayerTickHandler {
             }
         }
 
-        // Starvation damage handling
         if (foodLevel <= 0) {
             float health = player.getHealth();
             float threshold = difficulty.getStarvationDamageThreshold();

@@ -19,7 +19,6 @@ public class ExperienceHandler {
             return;
         }
 
-        // Get the highest difficulty multiplier from nearby players
         float maxMultiplier = 1.0f;
 
         List<ServerPlayerEntity> nearbyPlayers = entity.getWorld().getEntitiesByClass(

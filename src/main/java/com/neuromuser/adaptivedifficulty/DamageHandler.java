@@ -13,7 +13,6 @@ public class DamageHandler {
 
         Difficulty difficulty = DifficultyHelper.getDifficulty(player);
 
-        // Handle starvation damage
         if (source.isOf(net.minecraft.entity.damage.DamageTypes.STARVE)) {
             if (difficulty.preventStarvationDamage()) {
                 return 0.0f;
@@ -27,7 +26,6 @@ public class DamageHandler {
             return amount;
         }
 
-        // Handle regular damage scaling
         if (!source.isScaledWithDifficulty()) {
             return amount;
         }
