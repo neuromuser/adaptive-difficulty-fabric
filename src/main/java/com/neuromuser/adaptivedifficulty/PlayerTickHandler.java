@@ -3,6 +3,8 @@ package com.neuromuser.adaptivedifficulty;
 import net.minecraft.entity.player.HungerManager;
 import net.minecraft.server.network.ServerPlayerEntity;
 
+import java.util.Objects;
+
 public class PlayerTickHandler {
 
     public static void onPlayerTick(ServerPlayerEntity player) {
@@ -13,9 +15,8 @@ public class PlayerTickHandler {
         // Peaceful mode food regeneration
         if (difficulty == Difficulty.PEACEFUL) {
             hungerManager.setSaturationLevel(1.0f);
-            int regenRate = difficulty.getFoodRegenerationRate();
-            if (regenRate > 0 && player.getServer().getTicks() % 20 == 0) {
-                hungerManager.setFoodLevel(Math.min(foodLevel + regenRate, 20));
+            if (Objects.requireNonNull(player.getServer()).getTicks() % 20 == 0) {
+                hungerManager.setFoodLevel(Math.min(foodLevel + 1, 20));
             }
         }
 
