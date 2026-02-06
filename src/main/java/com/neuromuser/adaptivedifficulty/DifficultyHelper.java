@@ -21,8 +21,6 @@ public class DifficultyHelper {
     }
 
     public static void initialize(PlayerEntity player) {
-        World world = player.getWorld();
-        net.minecraft.world.Difficulty worldDifficulty = world.getDifficulty();
-        setDifficulty(player, Difficulty.fromMinecraftDifficulty(worldDifficulty));
+        setDifficulty(player, Difficulty.NORMAL);
     }
 }
