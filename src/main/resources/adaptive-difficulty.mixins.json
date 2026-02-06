@@ -6,7 +6,8 @@
     "ActiveTargetGoalMixin",
     "DamageMixin",
     "PlayerEntityMixin",
-    "PlayerManagerMixin"
+    "PlayerManagerMixin",
+    "TieredRarityMixin"
   ],
   "client": [],
   "injectors": {

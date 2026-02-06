@@ -16,6 +16,11 @@ repositories {
                 url = 'https://maven.ladysnake.org/releases'
         }
         maven { url = "https://api.modrinth.com/maven"}
+
+        maven {
+                name "Will BL Releases"
+                url "https://maven.willbl.dev/releases"
+        }
 }
 
 loom {
@@ -40,8 +45,15 @@ dependencies {
         include "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${cca_version}"
 
         modImplementation "maven.modrinth:z6sMEexp:GFUW7N2P"
-
+        modImplementation "maven.modrinth:yUBXc3AH:BEPAjfEE"
+        modImplementation "com.github.apace100:autotag-api:${autotag_version}"
+        modImplementation "com.github.apace100:autotag:${autotag_version}"
+        include "com.github.apace100:autotag-api:${autotag_version}"
 }
+
+
+
+
 
 
 processResources {
