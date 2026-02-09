@@ -1,11 +1,11 @@
 package com.neuromuser.adaptivedifficulty;
 
 public enum Difficulty {
-    PEACEFUL("peaceful", "Peaceful", 0.0f, Float.MAX_VALUE, 1.0f, true, false, 0.5f, 1.0f),
-    EASY("easy", "Easy", 0.5f, 10.0f, 1.0f, false, true, 0.75f, 1.0f),
-    NORMAL("normal", "Normal", 1.0f, 1.0f, 1.0f, false, true, 1.0f, 1.0f),
-    HARD("hard", "Hard", 1.5f, 0.0f, 1.25f, false, true, 1.25f, 1.4f),
-    NIGHTMARE("nightmare", "Nightmare",  2.5f, 0.0f, 2.0f, false, true, 2.0f, 2.5f);
+    PEACEFUL("peaceful", "Peaceful", 0.0f, Float.MAX_VALUE, 1.0f, true,0.5f, 1.0f),
+    EASY("easy", "Easy", 0.5f, 10.0f, 1.0f, false, 0.75f, 1.0f),
+    NORMAL("normal", "Normal", 1.0f, 1.0f, 1.0f, false, 1.0f, 1.0f),
+    HARD("hard", "Hard", 1.5f, 0.0f, 1.25f, false, 1.25f, 1.4f),
+    NIGHTMARE("nightmare", "Nightmare",  2.5f, 0.0f, 2.0f, false, 2.0f, 2.5f);
 
     private final String id;
     private final String displayName;
@@ -13,20 +13,18 @@ public enum Difficulty {
     private final float starvationDamageThreshold;
     private final float exhaustionModifier;
     private final boolean preventStarvationDamage;
-    private final boolean allowsHostileMobTargeting;
     private final float expMultiplier;
     private final float tieredzRarityBuff;
 
     Difficulty(String id, String displayName, float damageMultiplier,
-               float starvationDamageThreshold, float exhaustionModifier, boolean preventStarvationDamage,
-               boolean allowsHostileMobTargeting, float expMultiplier, float tieredzRarityBuff) {
+               float starvationDamageThreshold, float exhaustionModifier, boolean preventStarvationDamage
+            , float expMultiplier, float tieredzRarityBuff) {
         this.id = id;
         this.displayName = displayName;
         this.damageMultiplier = damageMultiplier;
         this.starvationDamageThreshold = starvationDamageThreshold;
         this.exhaustionModifier = exhaustionModifier;
         this.preventStarvationDamage = preventStarvationDamage;
-        this.allowsHostileMobTargeting = allowsHostileMobTargeting;
         this.expMultiplier = expMultiplier;
         this.tieredzRarityBuff = tieredzRarityBuff;
     }
@@ -53,10 +51,6 @@ public enum Difficulty {
 
     public boolean preventStarvationDamage() {
         return preventStarvationDamage;
-    }
-
-    public boolean allowsHostileMobTargeting() {
-        return allowsHostileMobTargeting;
     }
 
     public float getExpMultiplier() {

@@ -3,7 +3,6 @@ package com.neuromuser.adaptivedifficulty;
 import com.neuromuser.adaptivedifficulty.network.AdaptiveComponents;
 import com.neuromuser.adaptivedifficulty.network.PlayerDifficultyData;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.world.World;
 
 public class DifficultyHelper {
 
