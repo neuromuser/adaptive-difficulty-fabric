@@ -1,8 +1,9 @@
 package com.neuromuser.adaptivedifficulty.network;
 
 import com.neuromuser.adaptivedifficulty.Difficulty;
-import dev.onyxstudios.cca.api.v3.component.sync.AutoSyncedComponent;
+import org.ladysnake.cca.api.v3.component.sync.AutoSyncedComponent;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.registry.RegistryWrapper;
 
 public class PlayerDifficultyData implements AutoSyncedComponent {
     private Difficulty difficulty = Difficulty.NORMAL;
@@ -20,7 +21,7 @@ public class PlayerDifficultyData implements AutoSyncedComponent {
     }
 
     @Override
-    public void readFromNbt(NbtCompound tag) {
+    public void readFromNbt(NbtCompound tag, RegistryWrapper.WrapperLookup registryLookup) {
         if (tag.contains("Difficulty", 8)) {
             String id = tag.getString("Difficulty");
             this.difficulty = Difficulty.fromId(id);
@@ -28,7 +29,7 @@ public class PlayerDifficultyData implements AutoSyncedComponent {
     }
 
     @Override
-    public void writeToNbt(NbtCompound tag) {
+    public void writeToNbt(NbtCompound tag, RegistryWrapper.WrapperLookup registryLookup) {
         tag.putString("Difficulty", difficulty.getId());
     }
 }

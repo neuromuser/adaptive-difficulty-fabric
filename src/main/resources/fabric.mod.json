@@ -21,7 +21,9 @@
       "com.neuromuser.adaptivedifficulty.network.AdaptiveComponents"
     ]
   },
-  "mixins": ["adaptive-difficulty.mixins.json"],
+  "mixins": [
+    "adaptive-difficulty.mixins.json"
+  ],
   "custom": {
     "cardinal-components": [
       "adaptivedifficulty:player_difficulty"
@@ -29,7 +31,7 @@
   },
   "depends": {
     "fabricloader": ">=0.16.0",
-    "minecraft": "1.20.1",
+    "minecraft": "~1.21.1",
     "java": ">=17",
     "fabric-api": "*",
     "cardinal-components-base": "*",
