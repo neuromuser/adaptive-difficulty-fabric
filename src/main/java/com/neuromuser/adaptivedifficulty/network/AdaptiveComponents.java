@@ -1,15 +1,16 @@
 package com.neuromuser.adaptivedifficulty.network;
 
-import dev.onyxstudios.cca.api.v3.component.ComponentKey;
-import dev.onyxstudios.cca.api.v3.component.ComponentRegistry;
-import dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry;
-import dev.onyxstudios.cca.api.v3.entity.EntityComponentInitializer;
-import dev.onyxstudios.cca.api.v3.entity.RespawnCopyStrategy;
+
 import net.minecraft.util.Identifier;
+import org.ladysnake.cca.api.v3.component.ComponentKey;
+import org.ladysnake.cca.api.v3.component.ComponentRegistry;
+import org.ladysnake.cca.api.v3.entity.EntityComponentFactoryRegistry;
+import org.ladysnake.cca.api.v3.entity.EntityComponentInitializer;
+import org.ladysnake.cca.api.v3.entity.RespawnCopyStrategy;
 
 public class AdaptiveComponents implements EntityComponentInitializer {
     public static final ComponentKey<PlayerDifficultyData> PLAYER_DIFFICULTY =
-            ComponentRegistry.getOrCreate(new Identifier("adaptivedifficulty", "player_difficulty"), PlayerDifficultyData.class);
+            ComponentRegistry.getOrCreate(Identifier.of("adaptivedifficulty", "player_difficulty"), PlayerDifficultyData.class);
 
     @Override
     public void registerEntityComponentFactories(EntityComponentFactoryRegistry registry) {
