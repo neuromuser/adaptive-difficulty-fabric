@@ -27,11 +27,6 @@ public class AdaptiveCommand {
                             .requires(source -> source.hasPermissionLevel(2))
                             .executes(ctx -> setDifficulty(ctx, EntityArgumentType.getPlayer(ctx, "target"), difficulty))
             );
-
-            command = command.then(
-                    CommandManager.literal(id)
-                            .executes(ctx -> setDifficulty(ctx, null, difficulty))
-            );
         }
 
         command = command.then(targetArgument.requires(source -> source.hasPermissionLevel(2)));

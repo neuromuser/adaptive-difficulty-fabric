@@ -21,8 +21,10 @@ public class PlayerDifficultyData implements AutoSyncedComponent {
 
     @Override
     public void readFromNbt(NbtCompound tag) {
-        String id = tag.getString("Difficulty");
-        difficulty = Difficulty.fromId(id);
+        if (tag.contains("Difficulty", 8)) {
+            String id = tag.getString("Difficulty");
+            this.difficulty = Difficulty.fromId(id);
+        }
     }
 
     @Override
